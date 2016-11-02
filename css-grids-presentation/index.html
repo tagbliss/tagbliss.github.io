@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>I Love CSS Grids</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			ul { text-align: center; }
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>An Introduction to CSS Grids</h1>
+					<p>James Myers, October 2016</p>
+				</section>
+
+				<section>
+						<h2>What are CSS Grids?</h2>
+						<ul>
+							<li class="fragment current-visible" data-fragment-index="1">It is not a new css framework</li>
+							<li class="fragment current-visible" data-fragment-index="2">It is not part of any current CSS Frameworks</li>
+							<li class="fragment current-visible" data-fragment-index="3">It is an upcoming W3C Standard</li>
+						</ul>
+				</section>
+
+				<section>
+					<h2>CSS Grid Layout Module Level 1</h2>
+					<p class="fragment">Candidate Status as of 29th September 2016</p>
+					<p class="fragment">Offical recommendation sometime in early 2017</p>
+					<aside class="notes">
+						<p>Candidate status translates to standard is locked down as it meets it's intended goals</p>
+						<p>The next stage is the Proposed Standard.</p>
+						<p>Why is it a module? I will tell you later</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>A Brief history of the CSS</h2>
+					<div class="fragment" style="display: inline-block; width: 40%">
+						<img src="images/Hakon.jpg" width="130" height="145" alt="" />
+						<p>Håkon Wium Lie</p>
+					</div>
+					<div class="fragment" style="display: inline-block; width: 40%">
+						<img src="images/bert.jpg" height="145" alt="" />
+						<p>Bert Bos</p>
+					</div>
+					<aside class="notes">
+						Go back in time<br />
+						Hakon was working with Sir Tim Berners Lee at Cern back in the early 1990s<br />
+						Hakon is - CTO @ Opera Software<br />
+						Bert Bos - CSS Working Group and former chairman of W3C
+					</aside>
+				</section>
+
+				<section>
+					<h2>CSS Level one</h2>
+					<p class="fragment">December 17, 1996</p>
+					<ul>
+						<li>Introduced Font properties</li>
+						<li>Color of text, backgrounds</li>
+						<li>Margin, border and padding</li>
+					</ul>
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>CSS Level two</h2>
+					<p class="fragment">May 1998</p>
+					<ul>
+						<li>Introduced new positioning techniques</li>
+						<li class="fragment">Absolute</li>
+						<li class="fragment">Relative</li>
+						<li class="fragment">Fixed</li>
+					</ul>
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>CSS Level 2.1</h2>
+					<p>A correction</p>
+					<aside class="notes">
+						Issues with 2.0 Spec<br />
+						Removal of poorly supported standards.
+						Jumped between Candidate and Working draft for many years<br />
+						Brought about a change in the process
+					</aside>
+				</section>
+
+				<section>
+					<h2>CSS3 Module based standards</h2>
+					<ul>
+						<li>CSS Media Queries</li>
+						<li>CSS Selectors Level 3</li>
+						<li>CSS Color Module Level 3</li>
+					</ul>
+					<aside class="notes">
+						Level 3 selectors = nthchild <br />
+						RGBA color values <br />
+					</aside>
+				</section>
+
+				<section>
+					<h2>A brief history of positioning hacks</h2>
+					<ul>
+						<li class="fragment">Tables for layout</li>
+						<li class="fragment">Floated divs</li>
+						<li class="fragment">Absolute positioning</li>
+						<li class="fragment">Relative positioning</li>
+						<li class="fragment">Fixed positioning</li>
+					</ul>
+					<aside class="notes">
+						So over the years<br />
+						Different types of positioning
+					</aside>
+				</section>
+
+				<section>
+					<h2>Browser support over the years</h2>
+					<aside class="notes">
+						IE6 - double margin float bug<br />
+						IE7 - fixed some introduced more<br />
+						IE8 - We can use display table for divs, controversal!!!
+					</aside>
+				</section>
+
+				<section>
+					<h2>Yeah, so what is this CSS Grid Layout Module Level 1</h2>
+					<blockquote>This CSS module defines a two-dimensional grid-based layout system, optimized for user interface design.
+					<aside class="notes">
+						The Abstract states
+					</aside>
+				</section>
+
+				<section>
+					<h2></h2>
+					<blockquote> In the grid layout model, the children of a grid container can be positioned into arbitrary slots in a predefined flexible or fixed-size layout grid.</blockquote>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>Thinking in grids</h2>
+					<p>Learning CSS grids requires a new way of thinking about layout</p>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>Terminology</h2>
+					<ul>
+						<li class="fragment">Grid Container</li>
+						<li class="fragment">Grid item</li>
+						<li class="fragment">Grid lines</li>
+						<li class="fragment">Grid track</li>
+						<li class="fragment">Grid cell</li>
+						<li class="fragment">Grid area</li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>Setting up your grid</h2>
+					<p>Defining your div to display as a grid</p>
+					<pre style="text-align: center;"><code>
+.container { display: grid; }
+					</code></pre>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>Demo</h2>
+					<aside class="notes">
+						Terminology again<br />
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>Browser Support</h2>
+					<ul>
+						<li>IE - Under consideration</li>
+						<li>Chrome - enabled via settings</li>
+						<li>Firefox - enabled via settings</li>
+						<li>Safari Technical Preview  - enabled via settings</li>
+						<li>Firefox Developer Edition - enabled by default</li>
+					</ul>
+					<aside class="notes">
+						Demo Safari TP<br />
+						Demo Chrome<br />
+						Demo Firefox Developer Edition
+					</aside>
+				</section>
+
+				<section>
+					<h2>Fall backs for older browser</h2>
+					<p>Just older versions of IE</p>
+					<ul>
+						<li>CSS-Grid-Polyfill</li>
+						<li>@supports at rule
+					<aside class="notes">
+						@supports at rule to check if your user agent supports grid layout
+					</aside>
+				</section>
+
+				<section>
+					<h2>When is it ready for primetime?</h2>
+					<p>It should become a recommedation in early 2017</p>
+					<aside class="notes">
+						Difficult to put a time frame on when all browsers will support it but all evergreen browsers should be supporting it sometime in 2017
+					</aside>
+				</section>
+
+				<section>
+					<h2>In conclusion</h2>
+					<ul>
+						<li class="fragment">Grids are awesome</li>
+						<li class="fragment">They simplfy layout</li>
+						<li class="fragment">Reduce the need for presentational classes</li>
+						<li class="fragment">Used together with custom elements we have some sweet clean semantic markup</li>
+						<li class="fragment">Get UI designers to experiment more with User Interfaces</li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>Resources and further reading</h2>
+					<ul>
+						<li>W3C CSS Grid Layout Module Level 1 - Spec</li>
+						<li>CSS Tricks - A Complete Guide to CSS Grids</li>
+						<li><a href="http://gridbyexample.com/" target="_blank">Grid by example - gridbyexample.com</a></li>
+						<li>Rachel Andrew - @rachelandrew <a href="https://twitter.com/rachelandrew" target="_blank">twitter</a></li>
+						<li>Can I Use - caniuse.com</li>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>Thank you!!!</h2>
+					<aside class="notes">
+					</aside>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
